@@ -39,7 +39,7 @@ This application extends a simple ecommerce platform\’s \“Cart\” functiona
     ```
 
 2. Run:
-   This will start the application and a PostgreSQL database in separate containers. Also, it will create the required tables and insert some sample data.
+   This will start the application and a PostgreSQL database in separate containers. Also, it will create the required tables and insert some sample data from file init.sql.
     ```bash
     docker compose up --build
     ```
@@ -176,7 +176,6 @@ curl -X POST -H "Content-Type: application/json" \
 {
   "id": 1,
   "totalInCents": 400
-  // ...
 }
 ```
 This indicates the cart total has now changed based on the ingredients of recipe #99.
@@ -206,7 +205,6 @@ curl -X DELETE http://localhost:8080/carts/1/recipes/99
 {
   "id": 1,
   "totalInCents": 0
-  // ...
 }
 ```
 Here, the items that belonged to recipe #99 have been removed, and `totalInCents` is updated accordingly.
